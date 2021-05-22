@@ -13,8 +13,6 @@ const Typography = () => import('@/views/theme/Typography')
 const Charts = () => import('@/views/charts/Charts')
 const Widgets = () => import('@/views/widgets/Widgets')
 
-//My custom component
-
 // Views - Components
 const Cards = () => import('@/views/base/Cards')
 const Forms = () => import('@/views/base/Forms')
@@ -59,6 +57,10 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
+//My custom component
+const Armies = () => import('@/views/armies/index');
+const CreateArmy = () => import('@/views/armies/create')
+
 Vue.use(Router)
 
 export default new Router({
@@ -76,6 +78,24 @@ function configRoutes () {
       name: 'Home',
       component: TheContainer,
       children: [
+        {
+          path: 'armies',
+          name: 'armies',
+          redirect: '/',
+          component: { render(c) {return c('router-view')}},
+          children: [
+            {
+              path: '/',
+              name: 'Armies',
+              component: Armies
+            },
+            {
+              path: 'create',
+              name: 'Armies/Create',
+              component: CreateArmy
+            }
+          ]
+        },
         {
           path: 'dashboard',
           name: 'Dashboard',
