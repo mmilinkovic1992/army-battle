@@ -57,11 +57,6 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
-//My custom component
-const Armies = () => import('@/views/armies/index');
-const CreateArmy = () => import('@/views/armies/create')
-const UpdateArmy = () => import('@/views/armies/update')
-
 Vue.use(Router)
 
 export default new Router({
@@ -88,17 +83,22 @@ function configRoutes () {
             {
               path: '/',
               name: '',
-              component: Armies
+              component: () => import('@/views/armies/index')
             },
             {
               path: 'create',
               name: 'Create',
-              component: CreateArmy
+              component: () => import('@/views/armies/create')
             },
             {
               path: 'update',
               name: 'Update',
-              component: UpdateArmy
+              component: () => import('@/views/armies/update')
+            },
+            {
+              path: 'delete',
+              name: 'Delete',
+              component: () => import('@/views/armies/delete')
             }
           ]
         },
