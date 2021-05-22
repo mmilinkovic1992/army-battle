@@ -60,6 +60,7 @@ const User = () => import('@/views/users/User')
 //My custom component
 const Armies = () => import('@/views/armies/index');
 const CreateArmy = () => import('@/views/armies/create')
+const UpdateArmy = () => import('@/views/armies/update')
 
 Vue.use(Router)
 
@@ -80,19 +81,24 @@ function configRoutes () {
       children: [
         {
           path: 'armies',
-          name: 'armies',
+          name: 'Armies',
           redirect: '/',
           component: { render(c) {return c('router-view')}},
           children: [
             {
               path: '/',
-              name: 'Armies',
+              name: '',
               component: Armies
             },
             {
               path: 'create',
-              name: 'Armies/Create',
+              name: 'Create',
               component: CreateArmy
+            },
+            {
+              path: 'update',
+              name: 'Update',
+              component: UpdateArmy
             }
           ]
         },
