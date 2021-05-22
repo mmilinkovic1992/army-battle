@@ -14,6 +14,34 @@ export default [
       },
       {
         _name: 'CSidebarNavTitle',
+        _children: ['Army']
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Armies',
+        route: 'armies',
+        icon: 'cil-people',
+        items: [
+          {
+            name: 'List',
+            to: '/armies'
+          },
+          {
+            name: 'Create',
+            to: '/armies/create'
+          },
+          {
+            name: 'Update',
+            to: '/armies/update'
+          },
+          {
+            name: 'Delete',
+            to: '/armies/delete'
+          }
+        ]
+      },
+      {
+        _name: 'CSidebarNavTitle',
         _children: ['Theme']
       },
       {
