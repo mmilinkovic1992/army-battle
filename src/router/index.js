@@ -14,7 +14,6 @@ const Charts = () => import('@/views/charts/Charts')
 const Widgets = () => import('@/views/widgets/Widgets')
 
 //My custom component
-const CreateMenues = () => import('@/views/menues/create')
 
 // Views - Components
 const Cards = () => import('@/views/base/Cards')
@@ -146,11 +145,6 @@ function configRoutes () {
             render (c) { return c('router-view') }
           },
           children: [
-            {
-              path: 'menues',
-              name: 'create',
-              component: CreateMenues
-            },
             {
               path: 'cards',
               name: 'Cards',

@@ -39,10 +39,6 @@ export default [
         icon: 'cil-puzzle',
         items: [
           {
-            name: 'Menues',
-            to: "/base/menues",
-          },
-          {
             name: 'Breadcrumbs',
             to: '/base/breadcrumbs'
           },
