@@ -18,6 +18,14 @@ export default {
              .then(response => (this.info = response))
 
       return this.info.data
+    },
+    store (data) {
+      axios.post('http://army-battle.test/api/army/create', data)
+          .then((response) => {
+            this.info = response
+          });
+
+      return this.info
     }
   }
 }
