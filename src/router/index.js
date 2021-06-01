@@ -6,6 +6,7 @@ const TheContainer = () => import('@/containers/TheContainer')
 
 // Views
 const Dashboard = () => import('@/views/Dashboard')
+const Game = () => import('@/views/game')
 
 const Colors = () => import('@/views/theme/Colors')
 const Typography = () => import('@/views/theme/Typography')
@@ -68,6 +69,38 @@ export default new Router({
 
 function configRoutes () {
   return [
+    {
+      path: '/game',
+      name: 'Game',
+      component: { render(c) {return c('router-view')}},
+      children:[
+        {
+          path:'/',
+          name: 'index',
+          component: () => import('@/views/game/index')
+        },
+        {
+          path:'create-game',
+          name: 'create-game',
+          component: () => import('@/views/game/create-game')
+        },
+        {
+          path:'create-army',
+          name: 'create-army',
+          component: () => import('@/views/game/create-army')
+        },
+        {
+          path:'add-army',
+          name: 'add-army',
+          component: () => import('@/views/game/add-army')
+        },
+        {
+          path:'game-list',
+          name: 'game-list',
+          component: () => import('@/views/game/game-list')
+        }
+      ]
+    },
     {
       path: '/',
       redirect: '/dashboard',
