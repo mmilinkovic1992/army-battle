@@ -129,6 +129,11 @@ function configRoutes () {
               component: () => import('@/views/armies/update')
             },
             {
+              path: 'update/:userId',
+              name: 'Update-user',
+              component: () => import('@/views/armies/updateForm')
+            },
+            {
               path: 'delete',
               name: 'Delete',
               component: () => import('@/views/armies/delete')
