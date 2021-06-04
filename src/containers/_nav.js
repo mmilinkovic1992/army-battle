@@ -31,13 +31,9 @@ export default [
             to: '/armies/create'
           },
           {
-            name: 'Update',
-            to: '/armies/update'
+            name: 'Update/Delete',
+            to: '/armies/update-delete'
           },
-          {
-            name: 'Delete',
-            to: '/armies/delete'
-          }
         ]
       },
       {

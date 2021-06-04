@@ -26,6 +26,14 @@ export default {
           });
 
       return this.info
+    },
+    update (data, id) {
+      axios.post('http://army-battle.test/api/armies/' + id + '/update', data)
+          .then((response) => {
+            this.info = response
+          });
+
+      return this.info
     }
   }
 }

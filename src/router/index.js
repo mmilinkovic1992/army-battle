@@ -124,7 +124,7 @@ function configRoutes () {
               component: () => import('@/views/armies/create')
             },
             {
-              path: 'update',
+              path: 'update-delete',
               name: 'Update',
               component: () => import('@/views/armies/update')
             },
