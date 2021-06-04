@@ -2,7 +2,7 @@
   <div>
     <CCard>
       <CCardHeader>
-        <strong>Company </strong><small>Form</small>
+        <strong>Army </strong><small> create </small>
       </CCardHeader>
       <CCardBody>
         <CInput
