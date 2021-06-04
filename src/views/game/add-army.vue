@@ -6,22 +6,41 @@
         <div class="row">
           <div class="offset-md-2"></div>
           <div class="col-md-8">
-            <div class="message" v-if="message">{{ message }}</div>
+            <div class="message-success" v-if="messageSuccess">{{ messageSuccess }}</div>
+            <div class="message-error" v-if="messageError">{{ messageError }}</div>
             <form class="form" @submit.prevent="assign" method="put">
               <div class="form-group">
                 <label>Choose Game</label>
-                <select class="form-control" v-model="assignedGame">
-                  <option :value="game.id" v-for="game in games" :key="game.id">{{ game.name }}</option>
-                </select>
+                <Multiselect
+                  v-model="assignedGame"
+                  :options="games"
+                  :multiple="false"
+                  :close-on-select="true"
+                  placeholder="Choose game"
+                  label="name"
+                  track-by="id"
+                  :allowEmpty="false"
+                ></Multiselect>
               </div>
               <div class="form-group">
-                <label>Choose Army</label>
-                <select class="form-control" v-model="assignedArmy">
-                  <option :value="army.id" v-for="army in armies" :key="army.id">{{ army.name }}</option>
-                </select>
+                <label>Choose minimun 5 armies</label>
+                <Multiselect
+                  v-model="assignedArmy"
+                  :options="armies"
+                  :multiple="true"
+                  :close-on-select="false"
+                  :min="5"
+                  placeholder="Choose minimun 5 armies"
+                  label="name"
+                  track-by="id"
+                  :allowEmpty="true"
+                ></Multiselect>
               </div>
               <div class="form-group">
-                <button type="submit" class="game-btn ml-0">Add Army</button>
+                <button 
+                  type="submit" 
+                  class="game-btn ml-0"
+                >Add Army</button>
               </div>
             </form>
           </div>
@@ -34,19 +53,23 @@
 <script>
 import TopBar from './components/top-bar'
 import axios from 'axios'
-import 'babel-polyfill';
+import 'babel-polyfill'
+import Multiselect from 'vue-multiselect'
 export default {
   name: "add-army",
   components: {
-      TopBar
+      TopBar,
+      Multiselect
   },
   data() {
     return {
-      games: null,
-      armies: null,
+      games: [],
+      armies: [],
       assignedGame: null,
       assignedArmy: null,
-      message: ''
+      dataArmyIds: null,
+      messageSuccess: '',
+      messageError: ''
     }
   },
   async mounted() {
@@ -61,31 +84,49 @@ export default {
     try {
       const resArmies = await axios.get('http://army-battle.test/api/armies');
       this.armies = resArmies.data.armies
+      
     } catch (error) {
       console.log(error)
     }
 
   },
+  computed: {
+    armyLoopIds() {
+      let array = [];
+      this.assignedArmy.forEach(element => {
+        array.push(element.id);
+        this.dataArmyIds = array;
+      });
+      return this.dataArmyIds;
+    }
+  },
   methods: {
     async assign() {
-      const data = {
-        game_id: this.assignedGame,
-        army_id: this.assignedArmy
-      }
+        const data = {
+          game_id: this.assignedGame.id,
+          army_id: this.armyLoopIds
+        }
+        console.log(data)
 
-      try {
-        const res = await axios.put('http://army-battle.test/api/game/assign-army', data);
-        this.message = res.data.message;
-      } catch (error) {
-        console.log(error)
-      }
+        if(data.army_id.length >= 5) {
+          try {
+            const res = await axios.put('http://army-battle.test/api/game/assign-army', data);
+            this.messageSuccess = res.data.message;
+          } catch (error) {
+            this.messageError = 'Something went wrong.';
+            console.log(error)
+          }
+        } else {
+          this.messageError = 'You must choose minimum 5 armies.';
+        }
 
-      this.$router.push("/game/game-list");
+      // this.$router.push("/game/game-list");
     }
-  }
+  },
 }
 </script>
 
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style scoped>
 
 </style>
