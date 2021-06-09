@@ -104,21 +104,22 @@ export default {
     async assign() {
         const data = {
           game_id: this.assignedGame.id,
-          army_id: this.armyLoopIds
+          army_ids: this.armyLoopIds
         }
-        console.log(data)
 
-        if(data.army_id.length >= 5) {
-          try {
-            const res = await axios.put('http://army-battle.test/api/game/assign-army', data);
-            this.messageSuccess = res.data.message;
-          } catch (error) {
-            this.messageError = 'Something went wrong.';
-            console.log(error)
-          }
-        } else {
-          this.messageError = 'You must choose minimum 5 armies.';
+        try {
+          const res = await axios.put('http://army-battle.test/api/game/assign-army', data);
+          this.messageSuccess = res.data.message;
+        } catch (error) {
+          this.messageError = 'Something went wrong.';
+          console.log(error)
         }
+
+        // if(data.army_id.length >= 5) {
+
+        // } else {
+        //   this.messageError = 'You must choose minimum 5 armies.';
+        // }
 
       // this.$router.push("/game/game-list");
     }

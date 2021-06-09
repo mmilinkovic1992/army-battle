@@ -16,7 +16,7 @@
 }
 .game-btn {
     padding: 7px 15px;
-    background-color: green;
+    background-color: #4b824b;
     border-radius: 5px;
     margin: 0 15px;
     text-decoration: none;
@@ -44,7 +44,7 @@
     padding: 5px 15px;
     background-color: #D4EDDA;
     border: 2px solid #c3e6cb;
-    color: green;
+    color: #4b824b;
     margin-bottom: 15px;
     border-radius: 3px;
 }
@@ -62,10 +62,11 @@
     padding: 30px;
     background-color: white;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .far {
-    color: green;
+    color: #4b824b;
     font-size: 20px;
 
     @media (max-width: 767px) {
@@ -74,6 +75,126 @@
     }
 }
 
+.fa-hand-point-right {
+    color: white;
+}
+
+.fa-long-arrow-alt-right {
+    font-size: 45px;
+}
+
 .router-link-exact-active {
     background-color: #cfab68;
+}
+
+.army-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.army-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.game-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.army-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.army-item {
+    padding: 10px;
+    // background-color: #c3e6cb;
+    background-color: #EBEDEF;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.game-table {
+    width: 100%;
+    thead {
+        background-color: white;
+        tr {
+            th {
+                border-bottom: 1px;
+            }
+        }
+    }
+    tbody {
+        position: relative;
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 25px;
+            height: 25px;
+            background-color: yellow;
+        }
+        tr {
+            margin-bottom: 15px;
+            background-color: white;
+        }
+    }
+}
+
+.bg-red {
+    background-color: #fb6969;
+    color: white;
+}
+
+.bg-green {
+    background-color: #c3e6cb;
+    color: #3c4b64;
+}
+
+.attack-left {
+    background-color: #f74040;
+    color: white;
+    padding: 30px;
+    border-radius: 5px;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.attack-right {
+    background-color: #5656ff;
+    color: white;
+    padding: 30px;
+    border-radius: 5px;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.attack-wrapper-inner {
+    p {
+        font-weight: 600;
+    }
+}
+
+.attack {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+    }
+}
+
+.attack-wrapper {
+    background-color: white;
+    padding: 30px;
 }
