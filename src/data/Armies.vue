@@ -34,6 +34,15 @@ export default {
           });
 
       return this.info
+    },
+
+    delete(id) {
+      axios.delete('http://army-battle.test/api/armies/' + id + '/delete')
+          .then((response) => {
+            this.info = response
+          });
+
+      return this.info;
     }
   }
 }
