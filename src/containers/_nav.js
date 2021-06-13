@@ -37,6 +37,22 @@ export default [
         ]
       },
       {
+        _name: 'CSidebarNavDropdown',
+        name: 'Games',
+        route: 'games',
+        icon: 'cil-people',
+        items: [
+          {
+            name: 'List',
+            to: '/games'
+          },
+          {
+            name: 'Create',
+            to: '/games/create'
+          }
+        ]
+      },
+      {
         _name: 'CSidebarNavTitle',
         _children: ['Theme']
       },
