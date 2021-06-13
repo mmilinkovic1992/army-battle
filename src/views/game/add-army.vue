@@ -6,7 +6,7 @@
         <div class="row">
           <div class="offset-md-2"></div>
           <div class="col-md-8">
-            <div class="message-success" v-if="messageSuccess">{{ messageSuccess }}</div>
+            <div class="message-success" v-if="messageSuccess">{{ messageSuccess }} <i class="fas fa-times" @click="closeMessage"></i></div>
             <div class="message-error" v-if="messageError">{{ messageError }}</div>
             <form class="form" @submit.prevent="assign" method="put">
               <div class="form-group">
@@ -122,6 +122,15 @@ export default {
         // }
 
       // this.$router.push("/game/game-list");
+    },
+    closeMessage() {
+      if(this.messageSuccess) {
+        this.messageSuccess = ''
+      }
+
+      if(this.messageError) {
+        this.messageError = ''
+      }
     }
   },
 }
