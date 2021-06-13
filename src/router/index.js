@@ -141,6 +141,39 @@ function configRoutes () {
           ]
         },
         {
+          path: 'games',
+          name: 'Games',
+          redirect: '/games',
+          component: { render(c) {return c('router-view')}},
+          children: [
+            {
+              path: '/',
+              name: '',
+              component: () => import('@/views/games/index')
+            },
+            {
+              path: 'create',
+              name: 'Create',
+              component: () => import('@/views/armies/create')
+            },
+            {
+              path: 'update-delete',
+              name: 'Update',
+              component: () => import('@/views/armies/update')
+            },
+            {
+              path: 'update/:userId',
+              name: 'Update-user',
+              component: () => import('@/views/armies/updateForm')
+            },
+            {
+              path: 'delete',
+              name: 'Delete',
+              component: () => import('@/views/armies/delete')
+            }
+          ]
+        },
+        {
           path: 'dashboard',
           name: 'Dashboard',
           component: Dashboard
