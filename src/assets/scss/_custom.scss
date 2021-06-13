@@ -41,21 +41,37 @@
 }
 
 .message-success {
+    position: relative;
     padding: 5px 15px;
     background-color: #D4EDDA;
     border: 2px solid #c3e6cb;
     color: #4b824b;
     margin-bottom: 15px;
     border-radius: 3px;
+
+    .fa-times {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        cursor: pointer;
+    }
 }
 
 .message-error {
+    position: relative;
     padding: 5px 15px;
     background-color: #f8d7da;
     border: 2px solid #f8d7da;
     color:#721c24;
     margin-bottom: 15px;
     border-radius: 3px;
+
+    .fa-times {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        cursor: pointer;
+    }
 }
 
 .form {
@@ -197,4 +213,23 @@
 .attack-wrapper {
     background-color: white;
     padding: 30px;
+}
+
+.vm--modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .winner {
+        font-size: 24px;
+        font-weight: 700;
+
+        span {
+            color: #4b824b;
+        }
+    }
+}
+
+.started {
+    background-color: yellow;
 }
