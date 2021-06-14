@@ -154,7 +154,7 @@ function configRoutes () {
             {
               path: 'create',
               name: 'Create',
-              component: () => import('@/views/armies/create')
+              component: () => import('@/views/games/create')
             },
             {
               path: 'update-delete',
