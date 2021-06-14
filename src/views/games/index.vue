@@ -48,7 +48,22 @@ export default {
   },
   methods: {
     deleteGame(id, index) {
-        console.log(id,index)
+      axios({
+        method: 'delete',
+        url: 'http://army-battle.test/api/games/delete/'+ id
+      }).then(response => {
+        this.info = response.data.message
+      }).catch(function (error) {
+        console.log(error);
+      });
+
+      this.deleteResponse(id, index)
+    },
+
+    deleteResponse(message, index) {
+      this.games.splice(index, 1)
+      this.backupGames.splice(index, 1)
+      setTimeout(() => this.info = "", 1500);
     }
   },
   async mounted() {
