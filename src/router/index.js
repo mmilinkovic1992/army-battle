@@ -157,14 +157,9 @@ function configRoutes () {
               component: () => import('@/views/games/create')
             },
             {
-              path: 'update-delete',
-              name: 'Update',
-              component: () => import('@/views/armies/update')
-            },
-            {
-              path: 'update/:userId',
+              path: 'update/:gameId',
               name: 'Update-user',
-              component: () => import('@/views/armies/updateForm')
+              component: () => import('@/views/games/update')
             },
             {
               path: 'delete',
