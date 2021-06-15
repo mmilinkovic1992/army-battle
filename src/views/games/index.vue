@@ -16,9 +16,6 @@
           {{item.status}}
         </td>
         <td>
-          <router-link :to="'games/create'" class="btn btn-outline-success btn-block active">
-            Create
-          </router-link>
           <router-link :to="'games/update/' + item.id" class="btn btn-outline-warning btn-block active">
             Update
           </router-link>
