@@ -37,6 +37,10 @@ export default [
         ]
       },
       {
+        _name: 'CSidebarNavTitle',
+        _children: ['Games']
+      },
+      {
         _name: 'CSidebarNavDropdown',
         name: 'Games',
         route: 'games',
