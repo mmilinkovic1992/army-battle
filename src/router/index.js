@@ -128,7 +128,7 @@ function configRoutes () {
         {
           path: 'armies',
           name: 'Armies',
-          redirect: '/',
+          redirect: '/armies',
           component: { render(c) {return c('router-view')}},
           children: [
             {
