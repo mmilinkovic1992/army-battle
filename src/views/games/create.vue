@@ -1,7 +1,6 @@
 <template>
   <div class="game-wrapper">
     <div class="container">
-      <TopBar></TopBar>
       <h1 class="game-title">Create Game</h1>
       <div class="row">
         <div class="offset-md-2"></div>

@@ -182,7 +182,7 @@ function configRoutes () {
             {
               path: 'create',
               name: 'Create',
-              component: () => import('@/views/games/create')
+              component: () => import('@/views/users/create')
             },
             {
               path: 'update/:userId',
