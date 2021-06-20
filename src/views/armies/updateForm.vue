@@ -37,7 +37,7 @@ export default {
   },
   async mounted() {
     try {
-      let id = this.$route.params.userId
+      let id = this.$route.params.armyId
       const response = await axios.get('http://army-battle.test/api/armies/' + id);
       this.army = response.data.army
     } catch (error) {
@@ -46,7 +46,7 @@ export default {
   },
   methods : {
     save() {
-      let id = this.$route.params.userId
+      let id = this.$route.params.armyId
       const name = this.$refs.name.value
       const units = this.$refs.units.value
       const attackStrategy = this.$refs.attack_strategy.state.toLowerCase()

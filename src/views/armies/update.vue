@@ -33,7 +33,7 @@
           {{item.attack_strategy}}
         </td>
         <td>
-          <router-link :to="'update/' + item.id" class="btn btn-outline-warning btn-block active">
+          <router-link :to="{ name: 'armies-update', params: { armyId: item.id }}" class="btn btn-outline-warning btn-block active">
             Update
           </router-link>
 

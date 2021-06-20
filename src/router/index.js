@@ -147,7 +147,7 @@ function configRoutes () {
               component: () => import('@/views/armies/update')
             },
             {
-              path: 'update/:userId',
+              path: 'update/:armyId',
               name: 'armies-update',
               component: () => import('@/views/armies/updateForm')
             },
