@@ -24,11 +24,11 @@ export default [
         items: [
           {
             name: 'List',
-            to: '/users'
+            to: {name: 'users-index'}
           },
           {
             name: 'Create',
-            to: '/users/create'
+            to: {name: 'users-create'}
           }
         ]
       },
@@ -44,15 +44,15 @@ export default [
         items: [
           {
             name: 'List',
-            to: 'list'
+            to: {name: 'armies-index'}
           },
           {
             name: 'Create',
-            to: 'create'
+            to: {name: 'armies-create'}
           },
           {
             name: 'Update/Delete',
-            to: 'update-delete'
+            to: {name: 'armies-update-delete'}
           },
         ]
       },
@@ -68,11 +68,11 @@ export default [
         items: [
           {
             name: 'List',
-            to: '/games'
+            to: {name: 'games-list'}
           },
           {
             name: 'Create',
-            to: '/games/create'
+            to: {name: 'games-create'}
           }
         ]
       },

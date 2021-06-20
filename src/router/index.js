@@ -121,90 +121,80 @@ function configRoutes () {
     },
     {
       path: '/admin',
-      redirect: 'admin/armies',
+      redirect: 'admin/armies/list',
       name: 'Home',
       component: TheContainer,
       children: [
         {
           path: 'armies',
           name: 'Armies',
-          redirect: '/armies',
+          redirect: 'armies/list',
           component: { render(c) {return c('router-view')}},
           children: [
             {
               path: 'list',
-              name: 'List',
+              name: 'armies-index',
               component: () => import('@/views/armies/index')
             },
             {
               path: 'create',
-              name: 'Create',
+              name: 'armies-create',
               component: () => import('@/views/armies/create')
             },
             {
               path: 'update-delete',
-              name: 'Update',
+              name: 'armies-update-delete',
               component: () => import('@/views/armies/update')
             },
             {
               path: 'update/:userId',
-              name: 'Update-user',
+              name: 'armies-update',
               component: () => import('@/views/armies/updateForm')
             },
-            {
-              path: 'delete',
-              name: 'Delete',
-              component: () => import('@/views/armies/delete')
-            }
           ]
         },
         {
           path: 'games',
           name: 'Games',
-          redirect: '/games',
+          redirect: 'games/list',
           component: { render(c) {return c('router-view')}},
           children: [
             {
-              path: '/',
-              name: '',
+              path: 'list',
+              name: 'games-list',
               component: () => import('@/views/games/index')
             },
             {
               path: 'create',
-              name: 'Create',
+              name: 'games-create',
               component: () => import('@/views/games/create')
             },
             {
               path: 'update/:gameId',
-              name: 'Update-user',
+              name: 'games-update',
               component: () => import('@/views/games/update')
             },
-            {
-              path: 'delete',
-              name: 'Delete',
-              component: () => import('@/views/armies/delete')
-            }
           ]
         },
         {
           path: 'users',
           name: 'Users',
-          redirect: '/users',
+          redirect: 'users/list',
           component: { render(c) {return c('router-view')}},
           children: [
             {
-              path: '/',
-              name: '',
+              path: 'list',
+              name: 'users-index',
               component: () => import('@/views/users/index')
             },
             {
               path: 'create',
-              name: 'Create',
+              name: 'users-create',
               component: () => import('@/views/users/create')
             },
             {
               path: 'update/:userId',
-              name: 'Update-user',
+              name: 'users-update',
               component: () => import('@/views/users/Update')
             }
           ]
