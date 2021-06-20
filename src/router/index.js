@@ -108,13 +108,13 @@ function configRoutes () {
       component: { render(c) {return c('router-view')}},
       children: [
         {
-          path: '/',
-          name: '',
+          path: 'login',
+          name: 'login-user',
           component: () => import('@/views/pages/Login')
         },
         {
           path: 'register',
-          name: 'Register',
+          name: 'register-user',
           component: () => import('@/views/pages/Register')
         },
       ]
