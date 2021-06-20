@@ -1,5 +1,14 @@
 <template>
   <div>
+    <div class="col-sm-2 col-md-12" v-if="info">
+      <div class="card text-center bg-success text-white">
+        <div class="card-body">
+          <blockquote class="card-blockquote">
+            <p>{{ info }}</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
     <table class="table table-striped table-fixed table-hover table-bordered">
       <th>First Name</th><th>Last Name</th><th>Email</th><th>Action</th>
         <tr v-for="(item,index) in this.users" :key="item.id">
@@ -40,6 +49,26 @@ export default {
       users: [],
       backupUsers: [],
       info: '',
+    }
+  },
+  methods: {
+    deleteResponse(message, index) {
+      this.users.splice(index, 1)
+      this.backupUsers = this.armies
+      setTimeout(() => this.info = "", 1500);
+    },
+
+    deleteUser(id, index) {
+      axios({
+        method: 'delete',
+        url: 'http://army-battle.test/api/users/delete/'+ id
+      }).then(response => {
+        this.info = response.data.message
+      }).catch(function (error) {
+        console.log(error);
+      });
+
+      this.deleteResponse(id, index)
     }
   },
   async mounted() {
