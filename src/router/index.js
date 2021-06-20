@@ -169,6 +169,29 @@ function configRoutes () {
           ]
         },
         {
+          path: 'users',
+          name: 'Users',
+          redirect: '/users',
+          component: { render(c) {return c('router-view')}},
+          children: [
+            {
+              path: '/',
+              name: '',
+              component: () => import('@/views/users/index')
+            },
+            {
+              path: 'create',
+              name: 'Create',
+              component: () => import('@/views/games/create')
+            },
+            {
+              path: 'update/:userId',
+              name: 'Update-user',
+              component: () => import('@/views/games/update')
+            }
+          ]
+        },
+        {
           path: 'dashboard',
           name: 'Dashboard',
           component: Dashboard

@@ -14,13 +14,33 @@ export default [
       },
       {
         _name: 'CSidebarNavTitle',
+        _children: ['Users']
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Users',
+        route: 'users',
+        icon: 'cil-people',
+        items: [
+          {
+            name: 'List',
+            to: '/users'
+          },
+          {
+            name: 'Create',
+            to: '/users/create'
+          }
+        ]
+      },
+      {
+        _name: 'CSidebarNavTitle',
         _children: ['Army']
       },
       {
         _name: 'CSidebarNavDropdown',
         name: 'Armies',
         route: 'armies',
-        icon: 'cil-people',
+        icon: 'cil-airplane-mode',
         items: [
           {
             name: 'List',
@@ -44,7 +64,7 @@ export default [
         _name: 'CSidebarNavDropdown',
         name: 'Games',
         route: 'games',
-        icon: 'cil-people',
+        icon: 'cil-3d',
         items: [
           {
             name: 'List',
