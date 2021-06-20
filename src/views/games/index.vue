@@ -1,14 +1,5 @@
 <template>
   <div>
-    <div class="col-sm-2 col-md-12" v-if="info">
-      <div class="card text-center bg-success text-white">
-        <div class="card-body">
-          <blockquote class="card-blockquote">
-            <p>{{ info }}</p>
-          </blockquote>
-        </div>
-      </div>
-    </div>
     <table class="table table-striped table-fixed table-hover table-bordered">
       <th>Name</th><th>Number of turns</th><th>Minimum number of armies</th><th>Status</th><th>Action</th>
       <tr v-for="(item,index) in this.games" :key="item.id">
@@ -68,7 +59,7 @@ export default {
 
     deleteResponse(message, index) {
       this.games.splice(index, 1)
-      this.backupGames = this.games
+      this.backupGames.splice(index, 1)
       setTimeout(() => this.info = "", 1500);
     }
   },
