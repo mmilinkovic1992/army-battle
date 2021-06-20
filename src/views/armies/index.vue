@@ -33,7 +33,8 @@
 <script>
 
 import CTableWrapper from '../base/Table.vue'
-import Armies from "../../data/Armies";
+import 'babel-polyfill';
+import axios from "axios";
 
 export default {
   name: "index",
@@ -53,8 +54,9 @@ export default {
       searchValue: ""
     }
   },
-  mounted() {
-    this.armies = Armies.methods.getArmies().armies
+  async mounted() {
+    await axios.get('http://army-battle.test/api/armies')
+        .then(response => (this.armies = response.data.armies))
     this.backupArmies = this.armies
   }
 
