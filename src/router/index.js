@@ -103,7 +103,25 @@ function configRoutes () {
     },
     {
       path: '/',
-      redirect: '/dashboard',
+      name: 'Login',
+      redirect: '/login',
+      component: { render(c) {return c('router-view')}},
+      children: [
+        {
+          path: '/',
+          name: '',
+          component: () => import('@/views/pages/Login')
+        },
+        {
+          path: 'register',
+          name: 'Register',
+          component: () => import('@/views/pages/Register')
+        },
+      ]
+    },
+    {
+      path: '/admin',
+      redirect: 'admin/armies',
       name: 'Home',
       component: TheContainer,
       children: [
@@ -114,8 +132,8 @@ function configRoutes () {
           component: { render(c) {return c('router-view')}},
           children: [
             {
-              path: '/',
-              name: '',
+              path: 'list',
+              name: 'List',
               component: () => import('@/views/armies/index')
             },
             {

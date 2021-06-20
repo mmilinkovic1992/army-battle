@@ -39,20 +39,20 @@ export default [
       {
         _name: 'CSidebarNavDropdown',
         name: 'Armies',
-        route: 'armies',
+        route: 'admin/armies',
         icon: 'cil-airplane-mode',
         items: [
           {
             name: 'List',
-            to: '/armies'
+            to: 'list'
           },
           {
             name: 'Create',
-            to: '/armies/create'
+            to: 'create'
           },
           {
             name: 'Update/Delete',
-            to: '/armies/update-delete'
+            to: 'update-delete'
           },
         ]
       },
