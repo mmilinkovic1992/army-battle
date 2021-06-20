@@ -9,6 +9,7 @@
             <router-link to="/game/add-army" class="game-btn">Add army to the game</router-link>
             <i class="far fa-arrow-alt-circle-right"></i>
             <router-link to="/game/game-list" class="game-btn">Game list</router-link>
+            <router-link :to="{ name: 'users-index'}" class="btn btn-outline-info active">Admin Panel</router-link>
         </div>
     </div>
   </header>
