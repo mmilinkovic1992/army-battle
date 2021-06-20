@@ -16,7 +16,7 @@
           {{item.status}}
         </td>
         <td>
-          <router-link :to="'games/update/' + item.id" class="btn btn-outline-warning btn-block active">
+          <router-link :to="{ name: 'games-update', params: { gameId: item.id }}" class="btn btn-outline-warning btn-block active">
             Update
           </router-link>
 
