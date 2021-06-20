@@ -42,14 +42,8 @@
             >
               <CCardBody>
                 <h2>Sign up</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <CButton
-                  color="light"
-                  variant="outline"
-                  size="lg"
-                >
-                  Register Now!
-                </CButton>
+                <p>Sign up for best army battle simulation game. This is interesting and amazing game.</p>
+                <router-link :to="{name: 'register-user'}" class="btn btn-outline-light btn-lg">Register Now!</router-link>
               </CCardBody>
             </CCard>
           </CCardGroup>
