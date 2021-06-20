@@ -26,7 +26,7 @@
           </td>
 
           <td>
-            <router-link :to="'users/update/' + item.id" class="btn btn-outline-warning btn-block active">
+            <router-link :to="{ name: 'users-update', params: { userId: item.id }}" class="btn btn-outline-warning btn-block active">
               Update
             </router-link>
 
