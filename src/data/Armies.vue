@@ -4,6 +4,7 @@
 
 <script>
 import axios from "axios"
+import 'babel-polyfill';
 
 export default {
   name: "Armies",
@@ -13,12 +14,6 @@ export default {
     }
   },
   methods: {
-    getArmies() {
-        axios.get('http://army-battle.test/api/armies')
-             .then(response => (this.info = response))
-
-      return this.info.data
-    },
     store (data) {
       axios.post('http://army-battle.test/api/army/create', data)
           .then((response) => {
