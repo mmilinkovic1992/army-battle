@@ -187,7 +187,7 @@ function configRoutes () {
             {
               path: 'update/:userId',
               name: 'Update-user',
-              component: () => import('@/views/games/update')
+              component: () => import('@/views/users/Update')
             }
           ]
         },

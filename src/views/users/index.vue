@@ -17,11 +17,11 @@
           </td>
 
           <td>
-            <router-link :to="'games/update/' + item.id" class="btn btn-outline-warning btn-block active">
+            <router-link :to="'users/update/' + item.id" class="btn btn-outline-warning btn-block active">
               Update
             </router-link>
 
-            <a class="btn btn-outline-danger btn-block active" @click="deleteGame(item.id, index)">Delete</a>
+            <a class="btn btn-outline-danger btn-block active" @click="deleteUser(item.id, index)">Delete</a>
 
           </td>
         </tr>
