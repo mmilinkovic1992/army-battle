@@ -61,7 +61,7 @@ export default {
     deleteUser(id, index) {
       axios({
         method: 'delete',
-        url: 'http://army-battle.test/api/users/delete/'+ id
+        url: 'http://army-battle.online/api/users/delete/'+ id
       }).then(response => {
         this.info = response.data.message
       }).catch(function (error) {
@@ -73,7 +73,7 @@ export default {
   },
   async mounted() {
     try {
-      const response = await axios.get("http://army-battle.test/api/users")
+      const response = await axios.get("http://army-battle.online/api/users")
       this.users = response.data.users
       this.backupUsers = this.users
     } catch (error) {

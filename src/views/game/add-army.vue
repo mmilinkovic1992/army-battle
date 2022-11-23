@@ -75,14 +75,14 @@ export default {
   async mounted() {
 
     try {
-      const resGames = await axios.get('http://army-battle.test/api/games');
+      const resGames = await axios.get('http://army-battle.online/api/games');
       this.games = resGames.data.games
     } catch (error) {
       console.log(error)
     }
 
     try {
-      const resArmies = await axios.get('http://army-battle.test/api/armies');
+      const resArmies = await axios.get('http://army-battle.online/api/armies');
       this.armies = resArmies.data.armies
       
     } catch (error) {
@@ -108,7 +108,7 @@ export default {
         }
 
         try {
-          const res = await axios.put('http://army-battle.test/api/game/assign-army', data);
+          const res = await axios.put('http://army-battle.online/api/game/assign-army', data);
           this.messageSuccess = res.data.message;
         } catch (error) {
           this.messageError = 'Something went wrong.';

@@ -101,7 +101,7 @@ export default {
       let message;
       axios({
         method: 'delete',
-        url: 'http://army-battle.test/api/armies/'+ id +'/delete'
+        url: 'http://army-battle.online/api/armies/'+ id +'/delete'
       }).then(response => {
         this.info = response.data.message
       }).catch(function (error) {
@@ -118,7 +118,7 @@ export default {
   },
   async mounted() {
     try {
-      const response = await axios.get('http://army-battle.test/api/armies');
+      const response = await axios.get('http://army-battle.online/api/armies');
       this.armies = response.data.armies
       this.backupArmies = this.armies
     } catch (error) {

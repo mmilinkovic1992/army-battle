@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     store (data) {
-      axios.post('http://army-battle.test/api/army/create', data)
+      axios.post('http://army-battle.online/api/army/create', data)
           .then((response) => {
             this.info = response
           });
@@ -23,7 +23,7 @@ export default {
       return this.info
     },
     update (data, id) {
-      axios.post('http://army-battle.test/api/armies/' + id + '/update', data)
+      axios.post('http://army-battle.online/api/armies/' + id + '/update', data)
           .then((response) => {
             this.info = response
           });
@@ -32,7 +32,7 @@ export default {
     },
 
     delete(id) {
-      axios.delete('http://army-battle.test/api/armies/' + id + '/delete')
+      axios.delete('http://army-battle.online/api/armies/' + id + '/delete')
           .then((response) => {
             this.info = response
           });

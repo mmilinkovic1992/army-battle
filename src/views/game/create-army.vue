@@ -63,7 +63,7 @@ export default {
             attack_strategy: this.attackStrategy
         }
 
-        axios.post('http://army-battle.test/api/army/create', data)
+        axios.post('http://army-battle.online/api/army/create', data)
             .then(res => this.message = res.data.message)
             .catch(err => console.error(err))
 

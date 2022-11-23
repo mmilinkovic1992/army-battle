@@ -67,7 +67,7 @@ export default {
         password: this.password
       }
 
-      await axios.post('http://army-battle.test/api/users/create', data)
+      await axios.post('http://army-battle.online/api/users/create', data)
             .then(res => this.message = res.data.message)
             .catch(err => console.error(err))
 

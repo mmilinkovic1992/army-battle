@@ -55,7 +55,7 @@ export default {
         repeat_password : this.repeat_password
       }
 
-      await axios.post('http://army-battle.test/api/register', register_data)
+      await axios.post('http://army-battle.online/api/register', register_data)
           .then(res => this.response = res.data)
           .catch(err => console.error(err))
 

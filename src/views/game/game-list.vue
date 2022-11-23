@@ -93,7 +93,7 @@ export default {
   },
   async mounted() {
     try {
-      const res = await axios.get('http://army-battle.test/api/games');
+      const res = await axios.get('http://army-battle.online/api/games');
       this.games = res.data.games
     } catch (error) {
       console.log(error)
@@ -105,7 +105,7 @@ export default {
         game_id: this.choosedGameId,
       }
       if(data.game_id !== null) {
-        const res = await axios.post('http://army-battle.test/api/game/run-attack', data);
+        const res = await axios.post('http://army-battle.online/api/game/run-attack', data);
         this.playGame = res.data.game;
       }else {
         this.messageError = 'Choose a game to run attack.'
@@ -141,7 +141,7 @@ export default {
       }
 
       if(data.game_id) {
-        const res = await axios.post('http://army-battle.test/api/game/reset/' + data.game_id)
+        const res = await axios.post('http://army-battle.online/api/game/reset/' + data.game_id)
         this.games = null
         this.playGame = null
         this.$router.push("/game/add-army");

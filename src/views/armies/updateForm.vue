@@ -38,7 +38,7 @@ export default {
   async mounted() {
     try {
       let id = this.$route.params.armyId
-      const response = await axios.get('http://army-battle.test/api/armies/' + id);
+      const response = await axios.get('http://army-battle.online/api/armies/' + id);
       this.army = response.data.army
     } catch (error) {
       console.log(error)

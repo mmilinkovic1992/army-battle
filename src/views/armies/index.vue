@@ -55,7 +55,7 @@ export default {
     }
   },
   async mounted() {
-    await axios.get('http://army-battle.test/api/armies')
+    await axios.get('http://army-battle.online/api/armies')
         .then(response => (this.armies = response.data.armies))
     this.backupArmies = this.armies
   }

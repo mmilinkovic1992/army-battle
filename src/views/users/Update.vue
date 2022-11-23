@@ -71,7 +71,7 @@ export default {
 
       let id = this.$route.params.userId
 
-      await axios.post('http://army-battle.test/api/users/update/' + id, dataForUpdate)
+      await axios.post('http://army-battle.online/api/users/update/' + id, dataForUpdate)
           .then(res => this.response = res.data)
           .catch(err => console.error(err))
 
@@ -83,7 +83,7 @@ export default {
   async mounted() {
     try {
       let id = this.$route.params.userId
-      const response = await axios.get('http://army-battle.test/api/users/' + id);
+      const response = await axios.get('http://army-battle.online/api/users/' + id);
       this.user = response.data.user
       this.first_name = this.user.first_name
       this.last_name = this.user.last_name

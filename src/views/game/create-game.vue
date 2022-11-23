@@ -55,7 +55,7 @@ export default {
         minimum_number_of_armies: this.numberOfArmies
       }
 
-      axios.post('http://army-battle.test/api/game/create', data)
+      axios.post('http://army-battle.online/api/game/create', data)
         .then(res => this.message = res.data.message)
         .catch(err => console.error(err))
 

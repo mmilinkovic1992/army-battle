@@ -47,7 +47,7 @@ export default {
     deleteGame(id, index) {
       axios({
         method: 'delete',
-        url: 'http://army-battle.test/api/games/delete/'+ id
+        url: 'http://army-battle.online/api/games/delete/'+ id
       }).then(response => {
         this.info = response.data.message
       }).catch(function (error) {
@@ -65,7 +65,7 @@ export default {
   },
   async mounted() {
     try {
-      const response = await axios.get("http://army-battle.test/api/games")
+      const response = await axios.get("http://army-battle.online/api/games")
       this.games = response.data.games
       this.backupGames = this.games
     } catch (error) {

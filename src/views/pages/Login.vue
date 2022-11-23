@@ -83,7 +83,7 @@ export default {
         password: this.password
       }
 
-      await axios.post("http://army-battle.test/api/login", loginData)
+      await axios.post("http://army-battle.online/api/login", loginData)
             .then(res => this.response = res.data)
             .catch(err => console.error(err))
 

@@ -64,7 +64,7 @@ export default {
       }
 
       let id = this.$route.params.gameId
-      await axios.post('http://army-battle.test/api/games/update/' + id, data)
+      await axios.post('http://army-battle.online/api/games/update/' + id, data)
           .then(res => this.response = res.data)
           .catch(err => console.error(err))
 
@@ -75,7 +75,7 @@ export default {
   async mounted() {
     try {
       let id = this.$route.params.gameId
-      const response = await axios.get('http://army-battle.test/api/game/' + id);
+      const response = await axios.get('http://army-battle.online/api/game/' + id);
       this.game = response.data.game
       this.gameName = this.game.name
       this.numberOfSteps = this.game.number_of_turns
